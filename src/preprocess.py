@@ -37,7 +37,7 @@ def preprocess_data(path='../data/nairobi_property_prices.csv'):
 
     cat_pipeline = Pipeline([
         ('imputer', SimpleImputer(strategy='most_frequent')),
-        ('encoder', OneHotEncoder(handle_unknown='ignore'))
+        ('encoder', OneHotEncoder(handle_unknown='ignore', sparse_output=False))
     ])
 
     preprocessor = ColumnTransformer([
